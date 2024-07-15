@@ -5,6 +5,9 @@ import { Box, Paper } from "@mui/material";
 
 
 export default function Home() {
+  var tile_1 = "Valley of Reflection";
+
+
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -14,10 +17,10 @@ export default function Home() {
               
             </Grid>
             <Grid item>
-              <Typography className="text-center p-5">Valley of Reflection</Typography>
+              <Typography className="text-center p-5">{tile_1}</Typography>
             </Grid>
           </Grid>
-          <Grid item container xs={2} className="border-2 border-indigo-600 rounded">
+          <Grid item container xs={2} className="bg-slate-200 border-2 border-indigo-600 rounded">
             <Typography>Grove of Growth</Typography>
           </Grid>
           <Grid item container xs={2} className="border-2 border-indigo-600 rounded">
