@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.MuiPaper-root, * {
+  background-color: white;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
 }
 
@@ -26,8 +30,19 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.search-field * {
+  height: 100%;
+  padding: 0;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@media only screen and (max-width: 1026px) {
+  .mobile-hide {
+      display: none;
   }
 }
