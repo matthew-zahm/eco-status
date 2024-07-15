@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.MuiPaper-root, * {
+  background-color: white;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
 }
 
@@ -26,8 +30,50 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.search-field * {
+  height: 100%;
+  padding: 0;
+}
+
+.feed-item__contents {
+  height: 90%;
+}
+.feed-item__toolbar {
+  width: 45px;
+  bottom: 0px;
+  right: -60px;
+}
+.feed-item__toolbar-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* .feed-item__toolbar-count {
+  position: absolute;
+  bottom:-20px;
+} */
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@media only screen and (max-width: 1026px) {
+  .mobile-hide {
+      display: none;
+  }
+
+  .feed-item__toolbar {
+    right: 10px;
+    background: #ddf4d7;
+  }
+
+  .feed-item__toolbar-icon, .feed-item__toolbar-item {
+    background-color: white;
+  }
+  .feed-item__toolbar-count {
+    background: #ddf4d7;
   }
 }
