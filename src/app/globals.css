@@ -54,6 +54,9 @@ body {
 #side-bar {
   width: 180px;
 }
+.feed-item {
+  margin-left: 180px;
+}
 
 #page {
   flex-grow: 1;
@@ -87,6 +90,10 @@ body {
     border-right-width: 1px ;
     border-right-color: "#cbd5e1";
   }
+  .feed-item {
+    margin-left: 70px;
+  }
+  
 
   .side_item__icon {
     margin-bottom: 10px;

@@ -44,17 +44,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} relative`}>
         <NavBar />
-        <Grid container direction="row">
-          <Grid item direction="column" id="side-bar" className="h-full p-5 ">
-            <Side_Item icon={HomeIcon} title="For You" />
-            <Side_Item icon={ExploreIcon} title="Discover" />
-            <Side_Item icon={BookmarkIcon} title="Following" />
-            <Side_Item icon={AccountCircleIcon} title="Profile" />
-            <Side_Item icon={AddIcon} title="Create" />
-          </Grid>
-          <Grid item id="page">
-            {children}
-          </Grid>
+        {children}
+        
+        <Grid container direction="column" id="side-bar" className="fixed left-0 top-14 h-full p-5 ">
+          <Side_Item icon={HomeIcon} title="For You" />
+          <Side_Item icon={ExploreIcon} title="Discover" />
+          <Side_Item icon={BookmarkIcon} title="Following" />
+          <Side_Item icon={AccountCircleIcon} title="Profile" />
+          <Side_Item icon={AddIcon} title="Create" />
         </Grid>
       </body>
     </html>
