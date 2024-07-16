@@ -49,10 +49,15 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/* .feed-item__toolbar-count {
-  position: absolute;
-  bottom:-20px;
-} */
+
+
+#side-bar {
+  width: 180px;
+}
+
+#page {
+  flex-grow: 1;
+}
 
 @layer utilities {
   .text-balance {
@@ -75,5 +80,25 @@ body {
   }
   .feed-item__toolbar-count {
     background: #ddf4d7;
+  }
+
+  #side-bar {
+    width: 70px;
+    border-right-width: 1px ;
+    border-right-color: "#cbd5e1";
+  }
+
+  .side_item__icon {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #main {
+    padding: 60px 5px 5px 5px;
+  }
+  
+  .feed-item__contents {
+    height: 92%;
   }
 }
