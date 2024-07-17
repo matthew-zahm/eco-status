@@ -14,13 +14,13 @@ export default function NavBar() {
           <Grid container justifyContent="space-between" className='w-full'>
             <Grid item xs={3} container className='items-center h-12'>
               <Image
-                className='h-10 w-10'
+                className='h-10 w-10 cursor-pointer'
                 width={40}
                 height={40}
                 src="/Eco-Status.png"
                 alt='Eco Status'
               />
-              <Typography className='text-eco-green ml-4 w-fit text-2xl font-bold font-sans mobile-hide'>
+              <Typography className='text-eco-green pl-4 w-fit text-2xl font-bold font-sans mobile-hide cursor-pointer'>
                 Eco Status
               </Typography>
             </Grid>
@@ -41,7 +41,7 @@ export default function NavBar() {
             </Grid>
             <Grid item xs={3} container className='items-center flex-row-reverse'>
               <Typography
-                className='bg-eco-green-light p-2 pr-5 pl-5 rounded-2xl border-2 border-slate-300'
+                className='bg-eco-green-light p-2 pr-5 pl-5 rounded-2xl border-2 border-slate-300 cursor-pointer'
               >
                 Login
               </Typography>
