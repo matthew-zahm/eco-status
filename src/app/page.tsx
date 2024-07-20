@@ -37,37 +37,40 @@ export function Toolbar_Item(props: Toolbar_Props) {
   </>
 }
 
+export function Feed_Item_Toolbar() {
+ return <div className="feed-item__toolbar flex flex-col absolute">
+   <Toolbar_Item>
+     <Follow_Icon />
+   </Toolbar_Item>
+   
+   <Toolbar_Item count={40}>
+     <Like_Icon />
+   </Toolbar_Item>
+   
+   <Toolbar_Item count={50}>
+     <Comment_Icon />
+   </Toolbar_Item>
+   
+   <Toolbar_Item count={24}>
+     <Add_Bookmark_Icon />
+   </Toolbar_Item>
+   
+   <Toolbar_Item count={11}>
+     <Share_Icon />
+   </Toolbar_Item>
+ </div>;
+}
+
 export function Feed_Item(props: Feed_Props) {
   return <>
     <div ref={props.innerRef} className="feed-item flex w-full h-dvh justify-around ">
-      <div className="w-full relative feed-item__contents flex border-2 bg-eco-green-light border-slate-300 max-w-screen-md rounded-lg">
+      <div className="w-full relative feed-item__contents flex border-2 border-slate-300 max-w-screen-md rounded-lg">
 
         <Player
           src={"https://lzzdsujckveigwyz.public.blob.vercel-storage.com/PXL_20240705_034314398-MkZx6V2VP4a7hajrZwoI337XdmQKVo.mp4"} 
         />
 
-        <div className="feed-item__toolbar flex flex-col absolute">
-          <Toolbar_Item>
-            <Follow_Icon />
-          </Toolbar_Item>
-          
-          <Toolbar_Item count={40}>
-            <Like_Icon />
-          </Toolbar_Item>
-          
-          <Toolbar_Item count={50}>
-            <Comment_Icon />
-          </Toolbar_Item>
-          
-          <Toolbar_Item count={24}>
-            <Add_Bookmark_Icon />
-          </Toolbar_Item>
-          
-          <Toolbar_Item count={11}>
-            <Share_Icon />
-          </Toolbar_Item>
-        </div>
-
+        <Feed_Item_Toolbar />
       </div>
     </div>
   </>

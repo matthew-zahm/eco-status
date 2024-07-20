@@ -33,7 +33,6 @@ export function Side_Item(props: Side_Item_Props) {
         <div className="side_item__icon mr-2 text-eco-green text-sm fill-current stroke-current">
           {props.children}
         </div>
-        // <props.icon className="side_item__icon mr-2 text-eco-green text-3xl" />
       }
       <p className="side_item__text font-bold text-lg mt-1 mobile-hide">
         {props.title}
