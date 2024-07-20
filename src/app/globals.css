@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
@@ -28,6 +29,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+#nav-bar {
+  background-color: white;
+}
+
 .search-field * {
   height: 100%;
   padding: 0;
@@ -47,7 +52,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+.feed-item__toolbar-count {
+  position: absolute;
+  bottom: -22px;
+  width: 100%;
+}
 
 #side-bar {
   width: 180px;
@@ -74,14 +83,18 @@ body {
 
   .feed-item__toolbar {
     right: 10px;
-    background: #ddf4d7;
+    background-color: transparent;
   }
 
   .feed-item__toolbar-icon, .feed-item__toolbar-item {
-    background-color: white;
+    background-color: transparent;
+    color: #ddf4d7;
   }
   .feed-item__toolbar-count {
-    background: #ddf4d7;
+    background-color: transparent;
+    border: none;
+    color: #ddf4d7;
+    bottom: -14px;
   }
 
   #side-bar {

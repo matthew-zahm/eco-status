@@ -1,7 +1,7 @@
 import Icon_Props from "./props";
 
 export default function(props: Icon_Props) {
-  return <svg height="2em" width="2em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className={`fill-current stroke-current ${props.className}`}>
+  return <svg height="2em" width="2em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className={props.className}>
     <path d="M92.574,294.24V124.336H43.277C19.449,124.336,0,144.213,0,168.467v206.44
       c0,24.254,19.449,44.133,43.277,44.133h62v45.469c0,3.041,1.824,5.777,4.559,6.932c2.736,1.154,5.957,0.486,8.023-1.641
       l49.844-50.76h106.494c23.828,0,43.279-19.879,43.279-44.133v-0.061H172.262C128.314,374.846,92.574,338.676,92.574,294.24z"/>

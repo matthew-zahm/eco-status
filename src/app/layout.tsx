@@ -30,7 +30,7 @@ export function Side_Item(props: Side_Item_Props) {
   return <>
     <Link href={props.path} className="flex mb-4 cursor-pointer">
       { props.children &&
-        <div className="side_item__icon mr-2 text-eco-green text-sm">
+        <div className="side_item__icon mr-2 text-eco-green text-sm fill-current stroke-current">
           {props.children}
         </div>
         // <props.icon className="side_item__icon mr-2 text-eco-green text-3xl" />
@@ -50,12 +50,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} relative`}>
-        <NavBar />
         
         <ReactQueryProvider>
           {children}
           <ReactQueryDevtools />
         </ReactQueryProvider>
+        
+        <NavBar />
         
         <div id="side-bar" className="flex flex-col fixed left-0 top-14 h-full p-5 ">
           <Side_Item title="For You" path="/for-you">

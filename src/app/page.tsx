@@ -25,11 +25,13 @@ interface Feed_Props {
 export function Toolbar_Item(props: Toolbar_Props) {
   return <>
     <div className="feed-item__toolbar-item flex flex-col w-12 h-12 rounded-full bg-eco-green-light relative mb-8 cursor-pointer">
-      <div className="feed-item__toolbar-icon m-auto bg-eco-green-light text-eco-green">
+      <div className="feed-item__toolbar-icon bg-eco-green-light text-eco-green fill-current stroke-current">
         {props.children}
       </div>
       {props.count != undefined &&
-        <p className="feed-item__toolbar-count mt-12 w-full text-center">{props.count}</p>
+        <div className='feed-item__toolbar-count rounded-full border-2 border-eco-green-light'>
+          <p className="w-full text-center">{props.count}</p>
+        </div>
       }
     </div>
   </>
@@ -40,7 +42,9 @@ export function Feed_Item(props: Feed_Props) {
     <div ref={props.innerRef} className="feed-item flex w-full h-dvh justify-around ">
       <div className="w-full relative feed-item__contents flex border-2 bg-eco-green-light border-slate-300 max-w-screen-md rounded-lg">
 
-        <Player src={"https://lzzdsujckveigwyz.public.blob.vercel-storage.com/PXL_20240705_034314398-MkZx6V2VP4a7hajrZwoI337XdmQKVo.mp4"} />
+        <Player
+          src={"https://lzzdsujckveigwyz.public.blob.vercel-storage.com/PXL_20240705_034314398-MkZx6V2VP4a7hajrZwoI337XdmQKVo.mp4"} 
+        />
 
         <div className="feed-item__toolbar flex flex-col absolute">
           <Toolbar_Item>
