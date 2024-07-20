@@ -1,23 +1,20 @@
 "use client";
 
-import React from 'react'
-
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import EnergySavingsLeafIcon from '@mui/icons-material/EnergySavingsLeaf';
-import ShareIcon from '@mui/icons-material/Share';
-import CommentIcon from '@mui/icons-material/Comment';
-import BookmarkIcon from '@mui/icons-material/Bookmark';
-import PersonAddIcon from '@mui/icons-material/PersonAdd';
-import { OverridableComponent } from '@mui/material/OverridableComponent';
-import { SvgIconTypeMap, Box, List, ListItem } from '@mui/material';
+import React, { ReactNode } from 'react'
 import { useInfiniteQuery } from '@tanstack/react-query'
 import { useInView } from 'react-intersection-observer'
 import { useEffect } from 'react'
+import Player from 'next-video/player';
 
+import Follow_Icon from "../icons/follow";
+import Like_Icon from "../icons/like";
+import Comment_Icon from "../icons/comment";
+import Add_Bookmark_Icon from "../icons/add_bookmark";
+import Share_Icon from "../icons/share";
 
 interface Toolbar_Props {
-  icon: OverridableComponent<SvgIconTypeMap>,
+  // icon: OverridableComponent<SvgIconTypeMap>,
+  children?: ReactNode,
   count?: number
 }
 
@@ -27,30 +24,48 @@ interface Feed_Props {
 
 export function Toolbar_Item(props: Toolbar_Props) {
   return <>
-    <Grid item container direction="column" className="feed-item__toolbar-item w-12 h-12 rounded-full bg-eco-green-light relative mb-8 cursor-pointer">
-      <props.icon className="feed-item__toolbar-icon m-auto bg-eco-green-light text-eco-green" />
+    <div className="feed-item__toolbar-item flex flex-col w-12 h-12 rounded-full bg-eco-green-light relative mb-8 cursor-pointer">
+      <div className="feed-item__toolbar-icon m-auto bg-eco-green-light text-eco-green">
+        {props.children}
+      </div>
       {props.count != undefined &&
-        <Typography className="feed-item__toolbar-count mt-12 w-full text-center">{props.count}</Typography>
+        <p className="feed-item__toolbar-count mt-12 w-full text-center">{props.count}</p>
       }
-    </Grid>
+    </div>
   </>
 }
 
 export function Feed_Item(props: Feed_Props) {
   return <>
-    <Grid ref={props.innerRef} item container direction="row" className="feed-item w-full h-dvh justify-around ">
-      <Grid item container className="relative feed-item__contents border-2 bg-eco-green-light border-slate-300 max-w-screen-md rounded-lg">
+    <div ref={props.innerRef} className="feed-item flex w-full h-dvh justify-around ">
+      <div className="w-full relative feed-item__contents flex border-2 bg-eco-green-light border-slate-300 max-w-screen-md rounded-lg">
 
-        <Grid item container direction="column" className="feed-item__toolbar absolute">
-          <Toolbar_Item icon={PersonAddIcon} />
-          <Toolbar_Item icon={EnergySavingsLeafIcon} count={40} />
-          <Toolbar_Item icon={CommentIcon} count={50} />
-          <Toolbar_Item icon={BookmarkIcon} count={24} />
-          <Toolbar_Item icon={ShareIcon} count={11} />
-        </Grid>
+        <Player src={"https://lzzdsujckveigwyz.public.blob.vercel-storage.com/PXL_20240705_034314398-MkZx6V2VP4a7hajrZwoI337XdmQKVo.mp4"} />
 
-      </Grid>
-    </Grid>
+        <div className="feed-item__toolbar flex flex-col absolute">
+          <Toolbar_Item>
+            <Follow_Icon />
+          </Toolbar_Item>
+          
+          <Toolbar_Item count={40}>
+            <Like_Icon />
+          </Toolbar_Item>
+          
+          <Toolbar_Item count={50}>
+            <Comment_Icon />
+          </Toolbar_Item>
+          
+          <Toolbar_Item count={24}>
+            <Add_Bookmark_Icon />
+          </Toolbar_Item>
+          
+          <Toolbar_Item count={11}>
+            <Share_Icon />
+          </Toolbar_Item>
+        </div>
+
+      </div>
+    </div>
   </>
 }
 
@@ -106,8 +121,8 @@ export default function Home() {
 
   return (
     <>
-      <main id="main" className="flex min-h-screen flex-col items-center pb-4 pt-20 pl-8 pr-8">
-        <Grid id="feed" container direction="row" className="w-full h-dvh">
+      <main id="main" className="flex min-h-screen flex-col items-center pb-4 pt-4 pl-8 pr-8">
+        <div id="feed" className="flex flex-col w-full">
           
           <Feed_Item />
           <Feed_Item />
@@ -131,7 +146,7 @@ export default function Home() {
 
             ))}
 
-        </Grid>
+        </div>
       </main>
     </>
   );

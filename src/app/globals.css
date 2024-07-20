@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.MuiPaper-root, * {
-  background-color: white;
-}
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
@@ -21,6 +17,8 @@
 }
 
 body {
+  padding-top: 56px;
+  padding-left: 180px;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -53,9 +51,6 @@ body {
 
 #side-bar {
   width: 180px;
-}
-.feed-item {
-  margin-left: 180px;
 }
 
 #page {
@@ -94,10 +89,11 @@ body {
     border-right-width: 1px ;
     border-right-color: "#cbd5e1";
   }
-  .feed-item {
-    margin-left: 70px;
-  }
   
+  body {
+    /* padding-top: 56px; */
+    padding-left: 70px;
+  }
 
   .side_item__icon {
     margin-bottom: 10px;
@@ -106,7 +102,7 @@ body {
 
 @media only screen and (max-width: 767px) {
   #main {
-    padding: 60px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
   }
   
   .feed-item__contents {
